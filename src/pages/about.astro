@@ -1,21 +1,67 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PhotoStrip from "../components/PhotoStrip.astro";
+import FieldPlate from "../components/FieldPlate.astro";
 import Photo from "../components/Photo.astro";
 import "../interior.css";
 ---
 
 <Layout title="About">
   <article class="folio about">
-    <header>
-      <span class="stamp">About me</span>
-      <h1>From Naihati to Kaohsiung</h1>
-      <p class="intro">
-        I’m from Naihati, West Bengal, and I live in Kaohsiung, Taiwan. In
-        Bengali, my name is <span lang="bn">সৌভিক ঘোষ</span>. Today my work
-        spans Taiwan, China, Japan, the United States and India.
-      </p>
+    <header class="profile-opening">
+      <div class="opening-copy">
+        <span class="stamp">About me</span>
+        <h1>From Naihati to Kaohsiung</h1>
+        <p class="intro">
+          I’m from Naihati, West Bengal, and I live in Kaohsiung, Taiwan. In
+          Bengali, my name is <span lang="bn">সৌভিক ঘোষ</span>. Today my work
+          spans Taiwan, China, Japan, the United States and India.
+        </p>
+        <div class="profile-actions">
+          <a class="profile-button" href="#journey">
+            Follow my journey
+          </a>
+          <a href="#gallery">Photo album ↓</a>
+        </div>
+      </div>
+      <FieldPlate
+        photo="writing-table"
+        label="From my album"
+        caption="Away from the lab, in a white kurta at a café."
+      />
     </header>
+    <section class="folio-row" id="journey">
+      <div>
+        <span class="stamp">Three milestones</span>
+        <h2>How the work grew</h2>
+      </div>
+      <ol class="journey">
+        <li>
+          <span class="folio-meta">2016 / Service</span>
+          <p>
+            I co-founded{" "}
+            <a href="https://masterwithin.net/">Master Within Foundation</a>.
+            Its work in education and social service is where my story as a
+            founder begins.
+          </p>
+        </li>
+        <li>
+          <span class="folio-meta">2024 / Physics</span>
+          <p>
+            For my master’s at Adamas University, I studied how electrons
+            reflect at the junction between a metal and a superconductor.
+          </p>
+        </li>
+        <li>
+          <span class="folio-meta">2025 / Instruments</span>
+          <p>
+            I commissioned <a href="/inventor/#purakaash">Purākaash Mk II</a>,
+            bringing optics, tracking and software together for deep-sky imaging
+            from a city rooftop.
+          </p>
+        </li>
+      </ol>
+    </section>
 
     <section class="folio-row">
       <h2>In the lab</h2>
@@ -60,10 +106,8 @@ import "../interior.css";
       <div>
         <p>
           My Living Ideal is Sree Sree Thakur Anukulchandra. I’m a{" "}
-          <span lang="bn">ঋত্বিক</span>, and in 2016 I co-founded Master Within
-          Foundation for spiritual, educational and social-welfare work. Through{" "}
-          <i>Bijnan-Vibhuti</i>, I bring Thakur’s philosophy into conversation
-          with modern science.
+          <span lang="bn">ঋত্বিক</span>. Through <i>Bijnan-Vibhuti</i>, I bring
+          Thakur’s philosophy into conversation with modern science.
         </p>
         <p>
           That history matters to me as a founder, too. Vishwa Vigyan is a

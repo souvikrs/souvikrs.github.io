@@ -19,8 +19,10 @@ import "../home.css";
         books, Bengali poems and detective fiction.
       </p>
       <p class="about-line">
-        I co-founded Master Within and build software and instruments through
-        Vishwa Vigyan. My work spans Taiwan, China, Japan, the US and India.
+        I co-founded <a href="https://masterwithin.net/">Master Within</a> and
+        build software and instruments through{" "}
+        <a href="https://vishwavigyan.com/">Vishwa Vigyan</a>. My work spans
+        Taiwan, China, Japan, the US and India.
       </p>
       <div class="hero-actions">
         <a class="action" href="#profiles">
@@ -59,8 +61,8 @@ import "../home.css";
           <h3>{role.label}</h3>
           <p>{role.description}</p>
           <span class="path-action">
-            {role.slug === "apps" ? "Visit VV Automate" : "View profile"}{" "}
-            <span aria-hidden="true">{role.slug === "apps" ? "↗" : "→"}</span>
+            {role.slug === "apps" ? "Explore VV Automate" : "View profile"}{" "}
+            <span aria-hidden="true">{role.slug === "apps" ? "↗︎" : "→"}</span>
           </span>
         </a>
       ))}
@@ -78,10 +80,27 @@ import "../home.css";
         <h3>What Does Not Move</h3>
         <p>A question about Dharma and what guides our choices.</p>
       </a>
-      <a href="https://masterwithin.net/wisdom/videos/">
+      <a href="https://automate.vishwavigyan.com/quotedesk/#demo">
+        <div class="quote-illustration" aria-hidden="true">
+          <div class="quote-sheet">
+            <span>QuoteDesk</span>
+            <i></i>
+            <i></i>
+            <i></i>
+            <b>Quotation / PDF</b>
+          </div>
+        </div>
+        <span class="kicker">Try · AI development</span>
+        <h3>From a message to a quote</h3>
+        <p>
+          Follow a buyer’s enquiry through QuoteDesk, from a price list to a PDF
+          the seller can check.
+        </p>
+      </a>
+      <a href="https://www.youtube.com/@MasterWithinOfficial">
         <Photo name="in-conversation" />
         <span class="kicker">Watch · Master Within</span>
-        <h3>The video library</h3>
+        <h3>Master Within on YouTube</h3>
         <p>Explore conversations and teachings from Master Within.</p>
       </a>
       <a href="https://vishwavigyan.com/purakaash.html">
@@ -102,7 +121,7 @@ import "../home.css";
       </p>
     </div>
     <a class="action" href="https://souvikghoshrs.substack.com/">
-      Read my Substack <span aria-hidden="true">↗</span>
+      Read my Substack <span aria-hidden="true">↗︎</span>
     </a>
   </aside>
 </Layout>

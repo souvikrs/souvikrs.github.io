@@ -1,58 +1,72 @@
 ---
 import Profile from "../layouts/Profile.astro";
-import Photo from "../components/Photo.astro";
+import FieldPlate from "../components/FieldPlate.astro";
+import PhotoStrip from "../components/PhotoStrip.astro";
 ---
 
-<Profile
-  slug="inventor"
-  related={["quantum-physicist", "wellness-rd", "apps"]}
-  intro="I build instruments as well as working with them. The one I can show you best is a telescope I put together to photograph the night sky from a city rooftop."
->
+<Profile slug="inventor" related={["quantum-physicist", "wellness-rd", "apps"]}>
+  <Fragment slot="intro">
+    A faint nebula takes time to photograph. From a city rooftop, the sky keeps
+    moving and the streetlights keep shining. I put together{" "}
+    <a href="#purakaash">Purākaash Mk II</a> to work with both constraints.
+  </Fragment>
+  <div slot="lead" class="profile-actions">
+    <a class="profile-button" href="https://vishwavigyan.com/purakaash.html">
+      Open the illustrated build record
+    </a>
+  </div>
+  <FieldPlate
+    slot="plate"
+    photo="rooftop-telescope"
+    label="Instrument / Purākaash Mk II"
+    caption="On the roof with the assembled telescope and its hand controller."
+  />
+
   <section class="folio-row" id="purakaash">
     <div>
-      <span class="folio-meta">Field instrument / 2025</span>
-      <h2>Purākaash Mk II</h2>
+      <span class="stamp">Commissioned · October 2025</span>
+      <h2>Keeping a star in place</h2>
     </div>
     <div>
-      <figure class="field-photo">
-        <Photo name="rooftop-telescope" />
-        <figcaption>Setting up Purākaash on the rooftop.</figcaption>
-      </figure>
       <p>
-        The telescope collects the light. The mount has to keep it pointed at
-        the same patch of sky while the camera records a long exposure. My part
-        was bringing a 203 mm telescope, tracking mount, cooled camera and
-        guiding system together as one instrument.
+        A 203 mm optical tube gathers the light. As Earth turns, a guide camera
+        watches a star and sends small corrections to the mount. That keeps the
+        object on the same pixels while the main camera collects a long
+        exposure.
       </p>
       <p>
-        I commissioned it in October 2025 through Master Within. Vishwa Vigyan
-        documents the build.
+        The cooled camera limits noise. Narrowband filters let through selected
+        wavelengths emitted by glowing gas, helping a nebula stand out against
+        city light. Each part solves a different problem.
       </p>
-      <a href="https://vishwavigyan.com/purakaash.html">
-        See the telescope and build record ↗
-      </a>
-    </div>
-  </section>
-  <section class="folio-row">
-    <h2>Robotics, Vortex &amp; equipment</h2>
-    <div>
+      <PhotoStrip
+        items={[
+          ["telescope-mount", "Adjusting the mount"],
+          ["with-purakaash", "At the controls"],
+        ]}
+      />
       <p>
-        Robotics and Vortex are also part of my engineering work. I’m exploring
-        new equipment through Vishwa Vigyan and working with wellness companies
-        on how to turn an equipment idea into something they can manufacture.
+        My work was integrating the optics, mount, cameras and software through{" "}
+        <a href="https://masterwithin.net/">Master Within</a>. The build also
+        includes a guide in English and Bengali that explains setup, alignment
+        and focus for a student at the instrument.
       </p>
-      <a href="/wellness-rd/">My role in wellness equipment development →</a>
     </div>
   </section>
   <section class="folio-row">
-    <h2>Back at the lab</h2>
+    <h2>Other work at the bench</h2>
     <div>
       <p>
-        My research asks how quantum circuits behave when I cool and measure
-        them. My physics profile collects the experiments, theory and papers
-        behind that side of my work.
+        Robotics and Vortex are part of my engineering work. I’m also exploring
+        new equipment through Vishwa Vigyan. For the development and sourcing
+        side of that work, see{" "}
+        <a href="/wellness-rd/">my wellness R&amp;D profile</a>.
       </p>
-      <a href="/quantum-physicist/">Explore my physics research →</a>
+      <p>
+        My <a href="/quantum-physicist/">physics work</a> takes me from an
+        instrument pointed at the sky to a circuit cooled close to absolute
+        zero.
+      </p>
     </div>
   </section>
 </Profile>

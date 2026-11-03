@@ -7,77 +7,181 @@ import "../interior.css";
 
 <Layout
   title="Founder"
-  description="Souvik Ghosh’s business profile: Vishwa Vigyan ventures, app development, research services and project enquiries."
+  description="Explore Vishwa Vigyan with founder Souvik Ghosh. Try a QuoteDesk demo, see the AI development portfolio or bring a physics problem to VV Research Desk."
 >
   <article class="folio work">
-    <header>
-      <span class="stamp">Souvik Ghosh / Business</span>
-      <h1>Founder</h1>
-      <p class="intro">
-        A telescope for city skies, a desk for researchers and tools for people
-        running small businesses. This is my work through Vishwa Vigyan.
-      </p>
+    <header class="profile-opening">
+      <div class="opening-copy">
+        <span class="stamp">Souvik Ghosh / Business</span>
+        <h1>Founder</h1>
+        <p class="intro">
+          I founded <a href="https://vishwavigyan.com/">Vishwa Vigyan</a>.
+          Sometimes the problem on my desk is a physicist’s simulation that
+          gives the wrong answer. Sometimes it’s a trader spending the evening
+          typing prices into quotations.
+        </p>
+        <div class="profile-actions">
+          <a
+            class="profile-button"
+            href="https://vishwavigyan.com/contact.html"
+          >
+            Bring me a project
+          </a>
+          <a href="#building">Explore the work ↓</a>
+        </div>
+      </div>
+      <div class="quote-sample">
+        <span class="folio-meta">VV Automate / Product example</span>
+        <h2>From enquiry to quotation</h2>
+        <ol>
+          <li>A buyer sends a list on WhatsApp.</li>
+          <li>QuoteDesk matches items to the seller’s price list.</li>
+          <li>The seller checks the PDF and sends it.</li>
+        </ol>
+        <a href="https://automate.vishwavigyan.com/sample-quotation.pdf">
+          Open a sample quotation · PDF
+        </a>
+      </div>
     </header>
-
     <section class="folio-row" id="building">
       <div>
-        <span class="stamp">Services</span>
-        <h2>Vishwa Vigyan</h2>
+        <span class="stamp">AI development</span>
+        <h2>Inside VV Automate</h2>
       </div>
       <div>
         <p>
-          I founded Vishwa Vigyan as a Master Within initiative toward Sree Sree
-          Thakur Anukulchandra’s vision of the Satsang Vishwa Vigyan Kendra.
+          I build tools around jobs a business already does. Start with the
+          QuoteDesk demo. The other product pages show how a system can be set
+          up for your business.
         </p>
-        <div class="venture">
-          <h3>
-            <a href="https://research.vishwavigyan.com/">VV Research Desk</a>
-          </h3>
-          <p>
-            For researchers working through a simulation, fitting a model to
-            data, or preparing figures for a paper or thesis.
-          </p>
-        </div>
-        <div class="venture">
-          <h3>
-            <a href={automateUrl}>VV Automate</a>
-          </h3>
-          <p>
-            QuoteDesk helps traders turn enquiries into quotations. Get Found
-            brings a business’s website, Google profile and WhatsApp catalogue
-            together. Custom Systems takes on workflows that need a tool of
-            their own.
-          </p>
-        </div>
-        <p>
-          <a href="https://vishwavigyan.com/contact.html">
-            Enquire about a project ↗
-          </a>
-        </p>
-        <div class="venture">
-          <span class="folio-meta">Other portfolio lines</span>
-          <p>VV Deep-Tech Studio, VV Trade, VV Learning and VV Media Lab.</p>
-        </div>
+        <dl class="product-index">
+          <dt>
+            <a href="https://automate.vishwavigyan.com/quotedesk/#demo">
+              QuoteDesk · see the demo
+            </a>
+          </dt>
+          <dd>
+            Turn a typed enquiry or a photographed list into a quotation ready
+            for review.
+          </dd>
+          <dt>
+            <a href="https://automate.vishwavigyan.com/billdrop/">BillDrop</a>
+          </dt>
+          <dd>
+            Read a supplier’s bill and prepare an entry for checking before it
+            reaches Tally.
+          </dd>
+          <dt>
+            <a href="https://automate.vishwavigyan.com/tradedocs/">TradeDocs</a>
+          </dt>
+          <dd>
+            Prepare a packing list and an invoice from the same shipment
+            details, then estimate the cost per unit.
+          </dd>
+          <dt>
+            <a href="https://automate.vishwavigyan.com/get-found/">Get Found</a>
+          </dt>
+          <dd>
+            Put the right business details in the places where local customers
+            search.
+          </dd>
+          <dt>
+            <a href="https://automate.vishwavigyan.com/custom-systems/">
+              Custom Systems
+            </a>
+          </dt>
+          <dd>
+            Start with a repeating job, its documents and the decisions that
+            still need a person.
+          </dd>
+        </dl>
+        <a class="profile-button" href={automateUrl}>
+          Explore the full VV Automate portfolio
+        </a>
       </div>
     </section>
-
     <section class="folio-row">
-      <h2>Related work</h2>
       <div>
+        <span class="stamp">Scientific computing</span>
+        <h2>VV Research Desk</h2>
+      </div>
+      <div>
+        <p>
+          A simulation can run without errors and still give an impossible
+          result. One worked example at the Desk uses a transport calculation
+          with a missing coupling. Another starts with a noisy frequency sweep
+          and shows how to extract the resonance and its width.
+        </p>
+        <p>
+          The examples use synthetic data. For your own project, bring the plot,
+          code or fit and the point where it stopped making sense.
+        </p>
+        <a href="https://research.vishwavigyan.com/">
+          See the worked examples at VV Research Desk →
+        </a>
+      </div>
+    </section>
+    <section class="folio-row">
+      <h2>Where the ventures fit</h2>
+      <div>
+        <p>
+          Vishwa Vigyan grew out of{" "}
+          <a href="https://masterwithin.net/">Master Within</a> and Sree Sree
+          Thakur Anukulchandra’s vision of the Satsang Vishwa Vigyan Kendra. Its
+          other business lines are VV Deep-Tech Studio, VV Trade, VV Learning
+          and VV Media Lab.
+        </p>
         <p id="instruments">
-          <a href="/inventor/">Instruments &amp; invention</a> · The build
-          record behind my rooftop telescope.
+          My <a href="/inventor/">inventor profile</a> documents the rooftop
+          telescope.
         </p>
         <p id="renatus">
-          <a href="/wellness-rd/">Renatus Wellness &amp; sourcing</a> · My work
-          with equipment and manufacturers.
+          My <a href="/wellness-rd/">Renatus Wellness profile</a> covers
+          equipment development and sourcing.
         </p>
         <p id="spirit">
-          <a href="/spiritual-mentor/">Master Within</a> · The foundation and
-          the tradition that inspired Vishwa Vigyan.
+          My <a href="/spiritual-mentor/">spiritual mentor profile</a>{" "}
+          introduces the foundation behind the work.
         </p>
       </div>
     </section>
     <ProfileLinks related={["apps", "wellness-rd", "inventor"]} />
   </article>
 </Layout>
+<style>
+  .quote-sample {
+    padding: clamp(20px, 3vw, 34px);
+    background: var(--ink);
+    color: var(--paper);
+    border-bottom: 5px solid var(--sun);
+  }
+  .quote-sample > span {
+    color: var(--sun);
+  }
+  .quote-sample h2 {
+    margin: 0.55rem 0 1rem;
+  }
+  .quote-sample ol {
+    list-style: decimal-leading-zero;
+    padding-left: 2rem;
+  }
+  .quote-sample li {
+    padding: 0.5rem 0 0.5rem 0.3rem;
+    border-bottom: 1px solid #ffffff42;
+  }
+  .quote-sample li::marker {
+    font: 500 0.8rem var(--mono);
+    color: var(--sun);
+  }
+  .product-index {
+    margin: 1.5rem 0;
+  }
+  .product-index dt {
+    border-top: 1px solid var(--line);
+    padding-top: 0.65rem;
+    font-weight: 650;
+  }
+  .product-index dd {
+    margin: 0.2rem 0 1rem;
+  }
+</style>

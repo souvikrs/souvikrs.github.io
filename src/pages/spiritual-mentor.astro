@@ -1,53 +1,84 @@
 ---
 import Profile from "../layouts/Profile.astro";
-import Photo from "../components/Photo.astro";
+import FieldPlate from "../components/FieldPlate.astro";
 ---
 
-<Profile
-  slug="spiritual-mentor"
-  related={["speaker", "author", "apps"]}
-  intro="I’m a Ritwik (ঋত্বিক). My spiritual work is rooted in my Living Ideal, Sree Sree Thakur Anukulchandra. Through Master Within, I share his teachings and help people find a place to begin their practice."
->
+<Profile slug="spiritual-mentor" related={["speaker", "author", "business"]}>
+  <Fragment slot="intro">
+    I’m a Ritwik (<span lang="bn">ঋত্বিক</span>). My Living Ideal is{" "}
+    <a href="https://masterwithin.net/thakur/who-is-thakur/">
+      Sree Sree Thakur Anukulchandra
+    </a>
+    . Through <a href="https://masterwithin.net/">Master Within</a>, I read his
+    words with people and talk about what they ask of us at home, at work and in
+    our relationships.
+  </Fragment>
+  <div slot="lead" class="profile-actions">
+    <a class="profile-button" href="https://masterwithin.net/class/">
+      Come to a Living Wisdom class
+    </a>
+  </div>
+  <FieldPlate
+    slot="plate"
+    photo="in-conversation"
+    label="Master Within / Conversation"
+    caption="Reading and conversation are part of my work as a Ritwik."
+  />
+
   <section class="folio-row">
-    <h2>Where to begin</h2>
+    <div>
+      <span class="stamp">A first visit</span>
+      <h2>What happens in a class?</h2>
+    </div>
     <div>
       <p>
-        If the name Thakur is new to you, start with this short introduction to
-        his life. It gives the context for the essays, gatherings and practices
-        we share.
+        I read a passage of Thakur’s aloud. We look at what a word means in
+        context, then talk about where that idea turns up in our own lives. The
+        weekly conversation is in Bengali and Hindi. On your first visit you’re
+        welcome to listen, with your camera off if you prefer.
       </p>
-      <a href="https://masterwithin.net/start/thakur/">
-        Meet my Living Ideal ↗
-      </a>
+      <p>
+        If you’re coming across his name for the first time,{" "}
+        <a href="https://masterwithin.net/start/thakur/">
+          this short introduction to Thakur
+        </a>{" "}
+        gives you a place to begin.
+      </p>
     </div>
   </section>
   <section class="folio-row">
-    <h2>Master Within Foundation</h2>
     <div>
-      <figure class="field-photo">
-        <Photo name="in-conversation" />
-        <figcaption>In conversation at Master Within.</figcaption>
-      </figure>
+      <span class="stamp">From the foundation</span>
+      <h2>A question to read with</h2>
+    </div>
+    <div>
       <p>
-        I co-founded Master Within Foundation in 2016. Education, daily practice
-        and social service belong together in this work. Our Living Wisdom class
-        is one way to join a conversation in Bengali and Hindi.
+        What guides a decision when the same act helps one person and hurts
+        another? I took up that question in{" "}
+        <a href="https://masterwithin.substack.com/p/what-does-not-move">
+          What Does Not Move
+        </a>
+        . It’s one way into what I mean when I speak about Dharma.
       </p>
-      <a href="https://masterwithin.net/class/">
-        Visit the Living Wisdom class ↗
-      </a>
+      <p>
+        I co-founded{" "}
+        <a href="https://masterwithin.net/">Master Within Foundation</a> in
+        2016. Our work brings spiritual practice, education and social service
+        together.
+      </p>
     </div>
   </section>
   <section class="folio-row">
     <h2>Bijnan-Vibhuti</h2>
     <div>
       <p>
-        This is my project bringing Thakur’s philosophy into conversation with
-        modern science. His vision of the Satsang Vishwa Vigyan Kendra also
-        inspired our work through Vishwa Vigyan.
+        As a physicist and a reader of Thakur, I’m interested in the questions
+        his philosophy brings to science. I call this work <i>Bijnan-Vibhuti</i>
+        . His vision of the Satsang Vishwa Vigyan Kendra inspired{" "}
+        <a href="https://vishwavigyan.com/">Vishwa Vigyan</a>.
       </p>
       <a href="https://masterwithin.substack.com/p/rebuilding-vishwa-vigyan">
-        Read “Rebuilding Vishwa Vigyan” ↗
+        Read my essay on rebuilding Vishwa Vigyan →
       </a>
     </div>
   </section>

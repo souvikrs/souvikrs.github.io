@@ -1,0 +1,18 @@
+---
+import Photo from "./Photo.astro";
+import photos from "../photos.json";
+interface Props {
+  photo: keyof typeof photos;
+  label: string;
+  caption: string;
+}
+const { photo, label, caption } = Astro.props;
+---
+
+<figure class="field-plate">
+  <Photo name={photo} loading="eager" />
+  <figcaption>
+    <span>{label}</span>
+    {caption}
+  </figcaption>
+</figure>

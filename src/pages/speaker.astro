@@ -1,53 +1,77 @@
 ---
 import Profile from "../layouts/Profile.astro";
-import PhotoStrip from "../components/PhotoStrip.astro";
+import FieldPlate from "../components/FieldPlate.astro";
 ---
 
 <Profile
   slug="speaker"
   related={["spiritual-mentor", "quantum-physicist", "author"]}
-  intro="I teach, speak and create videos. Sometimes that means explaining a physics experiment at a whiteboard. At Master Within, it often means taking a question about life back to a passage of Thakur’s and reading it together."
 >
+  <Fragment slot="intro">
+    At a whiteboard, I can draw a chain of sites and ask a room where an
+    electron might go. In a{" "}
+    <a href="https://masterwithin.net/class/">Living Wisdom class</a>, we start
+    with a passage in Bengali or Hindi. A good first question in either room is
+    which word or idea needs a closer look.
+  </Fragment>
+  <div slot="lead" class="profile-actions">
+    <a
+      class="profile-button"
+      href="mailto:founder@vishwavigyan.com?subject=Speaking%20invitation"
+    >
+      Invite me to speak
+    </a>
+    <a href="#watch">Listen first ↓</a>
+  </div>
+  <FieldPlate
+    slot="plate"
+    photo="talk-whiteboard"
+    label="Teaching / At the board"
+    caption="Working through an idea with a microphone in one hand and a marker in the other."
+  />
   <section class="folio-row">
-    <h2>Talks &amp; teaching</h2>
     <div>
-      <PhotoStrip
-        items={[
-          ["talk-whiteboard", "Working through an idea at the board"],
-          ["talk-podium", "Speaking at the podium"],
-        ]}
-      />
+      <span class="stamp">For a student audience</span>
+      <h2>Start with an experiment</h2>
+    </div>
+    <div>
       <p>
-        I’m interested in conversations where people can bring a real question,
-        whether it’s about learning science, finding direction or building a
-        daily practice.
+        Where does a wave go if it can move more easily to the right than to the
+        left? A sketch and a few adjustable bars give a room something to argue
+        about before we introduce the equations.
+      </p>
+      <a href="/quantum-physicist/#student">
+        Try the wave model from my research page →
+      </a>
+    </div>
+  </section>
+  <section class="folio-row" id="watch">
+    <div>
+      <span class="stamp">For a listening audience</span>
+      <h2>Hear the conversation</h2>
+    </div>
+    <div>
+      <p>
+        Find recorded talks on the{" "}
+        <a href="https://www.youtube.com/@MasterWithinOfficial">
+          Master Within YouTube channel
+        </a>
+        . For a live session,{" "}
+        <a href="https://masterwithin.net/class/">Living Wisdom</a> is our
+        weekly reading of Thakur’s words. First-time listeners are welcome.
       </p>
     </div>
   </section>
   <section class="folio-row">
-    <h2>Watch or join</h2>
+    <h2>What would your audience ask?</h2>
     <div>
       <p>
-        The Master Within video library collects talks and teachings. For a live
-        conversation, the Living Wisdom class page has the language and meeting
-        details.
-      </p>
-      <p>
-        <a href="https://masterwithin.net/wisdom/videos/">Browse videos ↗</a>
-      </p>
-      <a href="https://masterwithin.net/class/">Find the class ↗</a>
-    </div>
-  </section>
-  <section class="folio-row">
-    <h2>Speaking invitations</h2>
-    <div>
-      <p>
-        For a motivational talk, science session or conversation on spiritual
-        practice, tell me who will be in the room, what you’d like to discuss,
-        the language and the date you have in mind.
+        For a science session, a motivational talk or a conversation about
+        spiritual practice, tell me who will be there, their language, your date
+        and one question you’d like them to leave thinking about.
       </p>
       <a href="mailto:founder@vishwavigyan.com?subject=Speaking%20invitation">
-        Send a speaking enquiry →
+        Send a speaking invitation →
       </a>
     </div>
   </section>

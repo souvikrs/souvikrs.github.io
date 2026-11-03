@@ -11,7 +11,7 @@ const { related } = Astro.props;
   {related.map((slug) => (
     <a href={profileHref(slug)}>
       {profileFor(slug).label}{" "}
-      <span aria-hidden="true">{slug === "apps" ? "↗" : "→"}</span>
+      <span aria-hidden="true">{slug === "apps" ? "↗︎" : "→"}</span>
     </a>
   ))}
   <a href="/#profiles">All profiles</a>

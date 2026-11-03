@@ -5,45 +5,92 @@ import Profile from "../layouts/Profile.astro";
 <Profile
   slug="wellness-rd"
   related={["inventor", "business", "quantum-physicist"]}
-  intro="As an Associate Scientist at Renatus Wellness, I guide health companies on how equipment can be developed, sourced and made. My work connects India, China and Taiwan."
 >
+  <Fragment slot="intro">
+    A health company may know what a device should do long before it knows who
+    can make it. As an Associate Scientist at Renatus Wellness, I help translate
+    that need into a conversation with manufacturers across India, China and
+    Taiwan.
+  </Fragment>
+  <div slot="lead" class="profile-actions">
+    <a
+      class="profile-button"
+      href="mailto:founder@vishwavigyan.com?subject=Equipment%20development%20enquiry"
+    >
+      Discuss an equipment idea
+    </a>
+  </div>
+  <aside
+    slot="plate"
+    class="equipment-note"
+    aria-label="Questions for an equipment brief"
+  >
+    <span class="folio-meta">From the development desk</span>
+    <h2>An equipment brief</h2>
+    <dl>
+      <dt>01 / Intended use</dt>
+      <dd>Who will use the device, and where?</dd>
+      <dt>02 / Design</dt>
+      <dd>Is there a drawing, a sample or a working prototype?</dd>
+      <dt>03 / Acceptance</dt>
+      <dd>What would a sample have to demonstrate?</dd>
+    </dl>
+  </aside>
   <section class="folio-row">
-    <h2>From an idea to a manufacturer</h2>
+    <div>
+      <span class="stamp">Technology &amp; sourcing</span>
+      <h2>Two routes to a sample</h2>
+    </div>
     <div>
       <p>
-        A company may know what it wants a piece of equipment to do and still
-        need to work out who can make it. I help with that technical
-        conversation and with sourcing across countries.
+        If a team already has a design, an <strong>OEM</strong> conversation can
+        start with its drawings, materials and tolerances. With an{" "}
+        <strong>ODM</strong> partner, the manufacturer contributes a design, so
+        the first question is which features can be adapted.
       </p>
       <p>
-        My role includes working with OEM and ODM partners. In one arrangement
-        the manufacturer works to an existing design. In the other, the
-        manufacturing partner also contributes to the design.
+        Consider a handheld unit that will be used for several hours. Its
+        weight, grip and power supply are concrete things to discuss when
+        comparing samples. A reference photo alone leaves all three open.
       </p>
     </div>
   </section>
   <section class="folio-row">
-    <h2>Research &amp; invention</h2>
+    <h2>Bring the question you have now</h2>
     <div>
       <p>
-        I’m exploring new equipment alongside my work with Renatus Wellness. The
-        instrument I’ve documented publicly is Purākaash, a separate telescope
-        project built through Master Within and featured at Vishwa Vigyan.
+        If you have a prototype, describe the part that still needs work. If
+        you’re sourcing an existing device, describe where it will be used and
+        what you need to change. Either is enough to start a conversation.
       </p>
-      <a href="/inventor/#purakaash">Read the instrument story →</a>
-    </div>
-  </section>
-  <section class="folio-row">
-    <h2>Equipment enquiries</h2>
-    <div>
       <p>
-        If you want to discuss development or sourcing, tell me what the
-        equipment needs to do, where it will be used and what stage you’ve
-        reached.
+        For a public example of how I integrate components from different
+        makers,{" "}
+        <a href="/inventor/#purakaash">see the Purākaash telescope build</a>.
       </p>
-      <a href="mailto:founder@vishwavigyan.com?subject=Equipment%20development%20enquiry">
-        Email me about equipment →
-      </a>
     </div>
   </section>
 </Profile>
+<style>
+  .equipment-note {
+    border-top: 5px solid var(--leaf);
+    background: color-mix(in srgb, var(--leaf) 11%, var(--paper));
+    padding: clamp(18px, 3vw, 32px);
+  }
+  .equipment-note h2 {
+    margin: 0.5rem 0 1rem;
+  }
+  .equipment-note dl {
+    margin: 0;
+  }
+  .equipment-note dt {
+    padding-top: 0.55rem;
+    border-top: 1px solid var(--line);
+    font: 500 0.71rem var(--mono);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .equipment-note dd {
+    margin: 0.15rem 0 0.7rem;
+  }
+</style>

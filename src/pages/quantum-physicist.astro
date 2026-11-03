@@ -2,6 +2,8 @@
 import ProfileLinks from "../components/ProfileLinks.astro";
 import Layout from "../layouts/Layout.astro";
 import PhotoStrip from "../components/PhotoStrip.astro";
+import FieldPlate from "../components/FieldPlate.astro";
+import ChainModel from "../components/ChainModel.astro";
 import papers from "../data/papers.json";
 import "../interior.css";
 
@@ -21,23 +23,36 @@ const related = papers.filter(
   description="Souvik Ghosh’s quantum computing experiments, independent theory, Vishwa Vigyan Labs projects, papers and academic CV."
 >
   <article class="folio science" id="science">
-    <header>
-      <span class="stamp">Souvik Ghosh / Research</span>
-      <h1>Quantum physicist</h1>
-      <p class="intro">
-        I work on experiments in quantum computing. I also do independent
-        research into how electrons move through small devices.
-      </p>
-      <div class="research-links">
-        <a class="cv" href="/Souvik-Ghosh-CV.pdf" download>
-          Download my CV <small>PDF ↓</small>
-        </a>
-        <a href="#papers">Read my papers</a>
+    <header class="profile-opening">
+      <div class="opening-copy">
+        <span class="stamp">Souvik Ghosh / Research</span>
+        <h1>Quantum physicist</h1>
+        <p class="intro">
+          At the <a href="#lab">Quantum Circuit Lab</a> in Taiwan, I cool
+          superconducting circuits and use microwaves to measure them. On paper,
+          I study a different question. Why do some quantum waves spread while
+          others crowd against a boundary?
+        </p>
+        <div class="profile-actions">
+          <a class="profile-button" href="/Souvik-Ghosh-CV.pdf" download>
+            Download academic CV · PDF
+          </a>
+          <a href="#papers">Papers</a>
+          <a href="#student">Start with a model ↓</a>
+        </div>
       </div>
+      <FieldPlate
+        photo="fridge-work"
+        label="Experimental physics / Kaohsiung"
+        caption="Working on the lower stages of the dilution refrigerator, where the circuit is cooled for measurement."
+      />
     </header>
 
-    <section class="folio-row">
-      <h2>At the lab</h2>
+    <section class="folio-row" id="lab">
+      <div>
+        <span class="stamp">At the bench</span>
+        <h2>What does a qubit tell us?</h2>
+      </div>
       <div>
         <p>
           My experimental work is at the Quantum Circuit Lab in the Department
@@ -45,13 +60,13 @@ const related = papers.filter(
           Assoc. Prof. Kuei-Lin Chiu.
         </p>
         <p>
-          I cool small circuits to temperatures close to absolute zero and use
-          microwaves to measure their response. Those measurements tell us how a
-          qubit behaves inside a device.
+          A qubit has a characteristic transition frequency. By sweeping a
+          microwave tone and looking for a change in the readout, I can locate
+          that transition. The next question is how long an excitation survives
+          after the drive stops.
         </p>
         <PhotoStrip
           items={[
-            ["fridge-work", "Working on the dilution refrigerator"],
             ["under-plate", "Beneath the lowest plate"],
             ["circuit-detail", "A circuit assembly in hand"],
           ]}
@@ -59,20 +74,64 @@ const related = papers.filter(
       </div>
     </section>
 
-    <section class="folio-row">
-      <h2>Independent theory</h2>
+    <section class="folio-row" id="student">
+      <div>
+        <span class="stamp">Try the physics</span>
+        <h2>Can a wave lean against a wall?</h2>
+      </div>
       <div>
         <p>
-          In a chain of coupled sites, what makes a quantum state spread out,
-          gather at an edge or stay in one place? I study that question in
-          non-Hermitian SSH chains with quasiperiodic modulation. A separate
-          preprint uses related mathematics to study why a neural network can
-          become unstable during training.
+          Imagine 17 sites in a row. A particle can hop to either neighbour. The
+          bars below show how one wave is distributed along the chain. Give the
+          two directions different hopping strengths and see where the weight
+          goes.
+        </p>
+        <ChainModel />
+        <p>
+          This is a textbook model with open ends. My{" "}
+          <a href="https://arxiv.org/abs/2603.20330">sole-authored preprint</a>{" "}
+          asks what changes when the chain has alternating bonds and a second
+          pattern that tends to pin the wave in place. In part of the phase
+          diagram, an intermediate modulation lets states spread out again.
         </p>
         <p>
-          My other theoretical work follows electrons through small conductors,
-          with a focus on Landauer conductance and local partial density of
-          states. My independent research lives under Vishwa Vigyan Labs.
+          <a href="https://vishwavigyan.com/non-hermitian.html">
+            Explore the larger model at Vishwa Vigyan Labs →
+          </a>
+        </p>
+        <p>
+          If you’re studying this for the first time, try explaining what
+          changed when you reversed the bias.{" "}
+          <a href="mailto:souvikghosh2012@gmail.com?subject=Question%20about%20the%20quantum%20chain">
+            Write to me about the part that surprised you.
+          </a>
+        </p>
+      </div>
+    </section>
+    <section class="folio-row" id="theory">
+      <div>
+        <span class="stamp">Independent theory</span>
+        <h2>When training looks stable</h2>
+      </div>
+      <div>
+        <p>
+          The mathematics behind directed hopping has a second life in machine
+          learning. A small disturbance can grow for several steps even when the
+          usual long-term stability check looks reassuring.
+        </p>
+        <p>
+          In{" "}
+          <a href="https://arxiv.org/abs/2605.23476">
+            my preprint on neural-network training
+          </a>
+          , I use small two-layer networks to test a quantity that tracks this
+          temporary growth. It separated stable and unstable cases in those
+          experiments.
+        </p>
+        <p>
+          My other line of theory looks at electron transport through tiny
+          conductors, including what measurements can tell us about where charge
+          accumulates.
         </p>
       </div>
     </section>
@@ -162,7 +221,9 @@ const related = papers.filter(
         </p>
         <p>
           For research enquiries, write to{" "}
-          <a href="mailto:founder@vishwavigyan.com">founder@vishwavigyan.com</a>
+          <a href="mailto:souvikghosh2012@gmail.com">
+            souvikghosh2012@gmail.com
+          </a>
           .
         </p>
       </div>
@@ -171,29 +232,6 @@ const related = papers.filter(
   </article>
 </Layout>
 <style>
-  .research-links {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1.4rem;
-    margin-top: 1.5rem;
-  }
-  .science a.cv {
-    display: inline-flex;
-    gap: 0.85rem;
-    align-items: center;
-    padding: 0.65rem 1rem;
-    background: var(--ink);
-    color: var(--paper);
-    text-decoration: none;
-  }
-  .cv small {
-    font: 500 0.7rem var(--mono);
-    color: var(--sky);
-  }
-  .cv:hover {
-    text-decoration: underline;
-  }
   .bibliography {
     list-style: none;
     padding: 0;

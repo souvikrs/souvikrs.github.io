@@ -1,0 +1,139 @@
+---
+// Exact right eigenmode n=1 of an open chain. Squared amplitudes, normalized to sum to one.
+const sites = 17;
+const modes = [
+  {
+    id: "equal",
+    label: "Equal",
+    ratio: 1,
+    note: "With equal hopping, this standing wave has its largest weight in the middle.",
+  },
+  {
+    id: "right",
+    label: "Easier right",
+    ratio: 2,
+    note: "Double the hopping amplitude to the right and the same mode gathers near the right edge.",
+  },
+  {
+    id: "left",
+    label: "Easier left",
+    ratio: 0.5,
+    note: "Reverse the bias and the standing wave gathers near the left edge instead.",
+  },
+].map((mode) => {
+  const weights = Array.from(
+    { length: sites },
+    (_, j) =>
+      mode.ratio ** j * Math.sin((Math.PI * (j + 1)) / (sites + 1)) ** 2,
+  );
+  const sum = weights.reduce((a, b) => a + b, 0);
+  return { ...mode, weights: weights.map((w) => w / sum) };
+});
+---
+
+<fieldset class="chain-model">
+  <legend>Choose the hopping direction</legend>
+  <div class="switches">
+    {modes.map((mode, index) => (
+      <label>
+        <input
+          type="radio"
+          name="chain-hopping"
+          value={mode.id}
+          checked={index === 0}
+        />
+        {mode.label}
+      </label>
+    ))}
+  </div>
+  {modes.map((mode) => (
+    <div class="chain-state" data-mode={mode.id}>
+      <svg viewBox="0 0 400 105" aria-hidden="true" focusable="false">
+        <path d="M2 96H398" stroke="currentColor" fill="none" />
+        {mode.weights.map((weight, j) => (
+          <rect
+            x={8 + j * 23}
+            y={95 - 420 * weight}
+            width="16"
+            height={420 * weight}
+          />
+        ))}
+      </svg>
+      <div class="chain-labels" aria-hidden="true">
+        <span>Left edge</span>
+        <span>17 sites</span>
+        <span>Right edge</span>
+      </div>
+      <p>{mode.note}</p>
+    </div>
+  ))}
+</fieldset>
+<style>
+  .chain-model {
+    min-width: 0;
+    border: 0;
+    padding: 1.1rem;
+    margin: 1rem 0;
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .chain-model legend {
+    float: left;
+    width: 100%;
+    padding: 0;
+    font-weight: 650;
+  }
+  .switches {
+    clear: both;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35em;
+    padding: 0.5em 0 1em;
+  }
+  .switches label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+    font-size: 0.96rem;
+    padding: 0.2em 0.5em;
+    cursor: pointer;
+    border: 1px solid var(--paper);
+  }
+  .switches label:has(:checked) {
+    background: var(--sky);
+    border-color: var(--sky);
+    color: var(--ink);
+  }
+  .switches input {
+    margin: 0;
+    accent-color: var(--ink);
+  }
+  .switches label:has(:focus-visible) {
+    outline: 2px solid var(--paper);
+    outline-offset: 2px;
+  }
+  .chain-state {
+    display: none;
+  }
+  .chain-model:has([value="equal"]:checked) [data-mode="equal"],
+  .chain-model:has([value="right"]:checked) [data-mode="right"],
+  .chain-model:has([value="left"]:checked) [data-mode="left"] {
+    display: block;
+  }
+  .chain-state svg {
+    display: block;
+    width: 100%;
+    max-height: 165px;
+    fill: var(--sky);
+  }
+  .chain-labels {
+    display: flex;
+    justify-content: space-between;
+    font: 500 0.68rem/1.6 var(--mono);
+    text-transform: uppercase;
+  }
+  .chain-model .chain-state p {
+    font-size: 1rem;
+    margin: 0.9em 0 0;
+  }
+</style>

@@ -7,7 +7,7 @@ export const profiles = [
     category: "Research",
     color: "sky",
     description:
-      "Experiments in Taiwan, independent physics at Vishwa Vigyan Labs, papers and my academic CV.",
+      "Step inside a quantum hardware lab, try a wave model, or go straight to my papers and CV.",
   },
   {
     slug: "inventor",
@@ -15,7 +15,7 @@ export const profiles = [
     category: "Instruments & engineering",
     color: "sky",
     description:
-      "A rooftop telescope, my work in robotics and Vortex, and equipment I’m exploring.",
+      "How I integrated a telescope, tracking mount and cooled camera for a city rooftop.",
   },
   {
     slug: "author",
@@ -23,7 +23,7 @@ export const profiles = [
     category: "Writing",
     color: "violet",
     description:
-      "My books and translations, Bengali poems on Facebook and articles on Substack.",
+      "Science fiction from Kolkata, books on Thakur, and a place to read my Bengali poems.",
   },
   {
     slug: "business",
@@ -31,7 +31,7 @@ export const profiles = [
     category: "Business",
     color: "sun",
     description:
-      "The ventures I run through Vishwa Vigyan and how to bring us a research or business problem.",
+      "Inside Vishwa Vigyan, from fitting a noisy resonance to turning a buyer’s message into a quotation.",
   },
   {
     slug: "wellness-rd",
@@ -47,7 +47,7 @@ export const profiles = [
     category: "VV Automate",
     color: "sun",
     description:
-      "I build software for the everyday work of a business, from answering an enquiry to preparing a quotation.",
+      "I build VV Automate’s tools. Try QuoteDesk, see how BillDrop reads a bill, or follow a shipment through TradeDocs.",
   },
   {
     slug: "spiritual-mentor",
@@ -55,7 +55,7 @@ export const profiles = [
     category: "Master Within",
     color: "coral",
     description:
-      "My work as a Ritwik, the teachings I follow, and a place to begin a daily practice.",
+      "Meet my Living Ideal and come to a Bengali or Hindi reading at Master Within.",
   },
   {
     slug: "speaker",
@@ -63,7 +63,7 @@ export const profiles = [
     category: "Talks & media",
     color: "violet",
     description:
-      "Science at the whiteboard, conversations about everyday life, videos and invitations to speak.",
+      "Try a question from the whiteboard, listen to Master Within, or invite me to speak.",
   },
 ] as const;
 

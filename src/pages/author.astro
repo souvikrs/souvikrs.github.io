@@ -6,6 +6,7 @@ import Layout from "../layouts/Layout.astro";
 import "../interior.css";
 import "../author.css";
 
+const featured = books.find((book) => book.asin === "B0DSSTZZ59")!;
 const shelves = [
   ["original", "Books I wrote"],
   ["translation", "Books I translated"],
@@ -18,22 +19,50 @@ const shelves = [
 >
   <article class="folio writing" id="writing">
     <header class="reader-intro">
-      <span class="stamp">Souvik Ghosh / Writing</span>
-      <h1>Author, poet &amp; lyricist</h1>
-      <p class="intro">
-        I write poems in Bengali, dohe in Hindi, and stories and essays. Some
-        pieces begin and end with a few lines. Others become books.
-      </p>
+      <div class="profile-opening">
+        <div class="opening-copy">
+          <span class="stamp">Souvik Ghosh / Writing</span>
+          <h1>Author, poet &amp; lyricist</h1>
+          <p class="intro">
+            Kolkata is where my fictional detectives look for clues and where a
+            virologist in one of my novels first encounters a pathogen that
+            learns. In Bengali verse, I can stay with a single thought for a
+            whole poem.
+          </p>
+          <div class="profile-actions">
+            <a class="profile-button" href="#books">
+              Browse the bookshelf
+            </a>
+            <a href="#reading">Shorter reads ↓</a>
+          </div>
+        </div>
+        <a
+          class="jacket-feature"
+          href={`https://www.amazon.in/dp/${featured.asin}`}
+        >
+          <img
+            src={`/images/books/${featured.asin}.webp`}
+            alt={`Cover of ${featured.title}`}
+            width={featured.width}
+            height="720"
+          />
+          <span>
+            <span class="folio-meta">Featured fiction</span>
+            <strong>{featured.title}</strong>
+            <span class="jacket-link">Explore the novel on Kindle →</span>
+          </span>
+        </a>
+      </div>
       <nav class="reader-paths" aria-label="Choose what to read">
         <a id="poetry" href="https://www.facebook.com/souvikghoshrs">
           <span class="folio-meta">01 / Poetry</span>
           <strong lang="bn">বাংলা কবিতা</strong>
-          <span>Read my poems on Facebook ↗</span>
+          <span>Read my poems on Facebook ↗︎</span>
         </a>
         <a id="essays" href="https://souvikghoshrs.substack.com/">
           <span class="folio-meta">02 / Articles</span>
           <strong>Essays &amp; articles</strong>
-          <span>Read my Substack ↗</span>
+          <span>Read my Substack ↗︎</span>
         </a>
         <a href="#books">
           <span class="folio-meta">03 / Books</span>
@@ -68,9 +97,10 @@ const shelves = [
                   </div>
                   <h4>{b.title}</h4>
                   {b.subtitle && <p class="book-subtitle">{b.subtitle}</p>}
+                  <p class="book-hook">{b.hook}</p>
                   <p class="book-credit">{b.credit}</p>
                   <span class="book-link">
-                    View on Amazon India <span aria-hidden="true">↗</span>
+                    View on Amazon India <span aria-hidden="true">↗︎</span>
                   </span>
                 </a>
               ))}
@@ -99,17 +129,41 @@ const shelves = [
         ))}
       </div>
     </section>
-    <section class="folio-row" id="talks">
-      <h2>Beyond the bookshelf</h2>
+    <section class="folio-row" id="reading">
       <div>
+        <span class="stamp">Poems, lyrics &amp; essays</span>
+        <h2>If you have a few minutes</h2>
+      </div>
+      <div>
+        <h3 lang="bn">বাংলা কবিতা</h3>
         <p>
-          For Master Within, I wrote{" "}
+          I write poems and lyrics, and I also work in the two-line form of the
+          Hindi doha. I share my Bengali poems on{" "}
+          <a href="https://www.facebook.com/souvikghoshrs">
+            my personal Facebook page
+          </a>
+          .
+        </p>
+        <h3>From the lab to the public page</h3>
+        <p>
+          What happens when the policy moves faster than the hardware? That is
+          the question behind{" "}
+          <a href="https://souvikghoshrs.substack.com/p/before-the-qubits-are-ready-the-policy">
+            Before the Qubits Are Ready, the Policy Has Arrived
+          </a>
+          . You can read and subscribe to my articles on{" "}
+          <a href="https://souvikghoshrs.substack.com/">Substack</a>.
+        </p>
+        <h3 id="talks">Writing for Master Within</h3>
+        <p>
+          In{" "}
           <a href="https://masterwithin.substack.com/p/what-does-not-move">
             What Does Not Move
           </a>
-          , an essay on Dharma and how we choose what to do.
+          , I ask how to choose when the same act can help one person and harm
+          another.
         </p>
-        <a href="/speaker/">Talks, classes and videos →</a>
+        <a href="/speaker/">Hear my talks and classes →</a>
       </div>
     </section>
     <ProfileLinks related={["speaker", "spiritual-mentor"]} />
