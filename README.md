@@ -1,6 +1,6 @@
 # SouvikOS — Souvik Ghosh
 
-[Public website](https://souvikrs.github.io/) · [Author and bookshelf](https://souvikrs.github.io/author/)
+[Public website](https://souvikghoshrs.com/) · [Author and bookshelf](https://souvikghoshrs.com/author/)
 
 This static Astro website brings together Souvik’s work in research, invention, writing, business and spiritual mentorship. The homepage links to seven shareable profiles and one external destination: the AI developer card goes straight to [VV Automate](https://vvautomate.in/).
 
