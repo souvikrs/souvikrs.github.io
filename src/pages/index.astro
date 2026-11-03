@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Photo from "../components/Photo.astro";
+import { profiles, profileHref } from "../data/profiles";
+import "../home.css";
+---
+
+<Layout title="SouvikOS">
+  <section class="hello">
+    <div class="intro-copy">
+      <span class="place-line">
+        Naihati, India <i aria-hidden="true"></i> Kaohsiung, Taiwan
+      </span>
+      <h1>
+        Souvik Ghosh<span lang="bn">সৌভিক ঘোষ</span>
+      </h1>
+      <p class="identity">
+        I work on experiments in quantum computing. Away from the lab, I write
+        books, Bengali poems and detective fiction.
+      </p>
+      <p class="about-line">
+        I co-founded Master Within and build software and instruments through
+        Vishwa Vigyan. My work spans Taiwan, China, Japan, the US and India.
+      </p>
+      <div class="hero-actions">
+        <a class="action" href="#profiles">
+          Choose a profile <span aria-hidden="true">↓</span>
+        </a>
+        <a class="underlink" href="/about/">
+          My story →
+        </a>
+      </div>
+    </div>
+    <figure class="field-print">
+      <Photo name="souvik-portrait" loading="eager" />
+      <figcaption>
+        <span>Portrait / 01</span>
+        <span class="portrait-name" lang="bn">
+          সৌভিক ঘোষ
+        </span>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="start-block" id="profiles" aria-labelledby="profile-heading">
+    <div class="section-head" id="start">
+      <span class="kicker">Profile index / 01—08</span>
+      <h2 id="profile-heading">My work, by field</h2>
+    </div>
+    <div class="paths">
+      {profiles.map((role, index) => (
+        <a
+          class="path"
+          style={`--lane:var(--${role.color})`}
+          href={profileHref(role.slug)}
+        >
+          <span class="index-label">
+            {String(index + 1).padStart(2, "0")} / {role.category}
+          </span>
+          <h3>{role.label}</h3>
+          <p>{role.description}</p>
+          <span class="path-action">
+            {role.slug === "apps" ? "Visit VV Automate" : "View profile"}{" "}
+            <span aria-hidden="true">{role.slug === "apps" ? "↗" : "→"}</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+  <section class="shelf">
+    <div class="section-head">
+      <span class="kicker">Read, watch &amp; explore</span>
+      <h2>From my desk and workshop</h2>
+    </div>
+    <div class="shelf-items">
+      <a href="https://masterwithin.substack.com/p/what-does-not-move">
+        <Photo name="at-the-shore" />
+        <span class="kicker">Read · Essay</span>
+        <h3>What Does Not Move</h3>
+        <p>A question about Dharma and what guides our choices.</p>
+      </a>
+      <a href="https://masterwithin.net/wisdom/videos/">
+        <Photo name="in-conversation" />
+        <span class="kicker">Watch · Master Within</span>
+        <h3>The video library</h3>
+        <p>Explore conversations and teachings from Master Within.</p>
+      </a>
+      <a href="https://vishwavigyan.com/purakaash.html">
+        <Photo name="telescope-mount" />
+        <span class="kicker">Explore · Instrument</span>
+        <h3>A telescope on the roof</h3>
+        <p>How I put together Purākaash Mk II for deep-sky observing.</p>
+      </a>
+    </div>
+  </section>
+  <aside class="letters">
+    <div>
+      <span class="kicker">From my desk</span>
+      <h2>SouvikOS Letters</h2>
+      <p>
+        My personal newsletter hasn’t launched yet. For now, I publish articles
+        on Substack.
+      </p>
+    </div>
+    <a class="action" href="https://souvikghoshrs.substack.com/">
+      Read my Substack <span aria-hidden="true">↗</span>
+    </a>
+  </aside>
+</Layout>

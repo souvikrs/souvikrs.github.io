@@ -1,0 +1,83 @@
+---
+import ProfileLinks from "../components/ProfileLinks.astro";
+import { automateUrl } from "../data/profiles";
+import Layout from "../layouts/Layout.astro";
+import "../interior.css";
+---
+
+<Layout
+  title="Founder"
+  description="Souvik Ghosh’s business profile: Vishwa Vigyan ventures, app development, research services and project enquiries."
+>
+  <article class="folio work">
+    <header>
+      <span class="stamp">Souvik Ghosh / Business</span>
+      <h1>Founder</h1>
+      <p class="intro">
+        A telescope for city skies, a desk for researchers and tools for people
+        running small businesses. This is my work through Vishwa Vigyan.
+      </p>
+    </header>
+
+    <section class="folio-row" id="building">
+      <div>
+        <span class="stamp">Services</span>
+        <h2>Vishwa Vigyan</h2>
+      </div>
+      <div>
+        <p>
+          I founded Vishwa Vigyan as a Master Within initiative toward Sree Sree
+          Thakur Anukulchandra’s vision of the Satsang Vishwa Vigyan Kendra.
+        </p>
+        <div class="venture">
+          <h3>
+            <a href="https://research.vishwavigyan.com/">VV Research Desk</a>
+          </h3>
+          <p>
+            For researchers working through a simulation, fitting a model to
+            data, or preparing figures for a paper or thesis.
+          </p>
+        </div>
+        <div class="venture">
+          <h3>
+            <a href={automateUrl}>VV Automate</a>
+          </h3>
+          <p>
+            QuoteDesk helps traders turn enquiries into quotations. Get Found
+            brings a business’s website, Google profile and WhatsApp catalogue
+            together. Custom Systems takes on workflows that need a tool of
+            their own.
+          </p>
+        </div>
+        <p>
+          <a href="https://vishwavigyan.com/contact.html">
+            Enquire about a project ↗
+          </a>
+        </p>
+        <div class="venture">
+          <span class="folio-meta">Other portfolio lines</span>
+          <p>VV Deep-Tech Studio, VV Trade, VV Learning and VV Media Lab.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="folio-row">
+      <h2>Related work</h2>
+      <div>
+        <p id="instruments">
+          <a href="/inventor/">Instruments &amp; invention</a> · The build
+          record behind my rooftop telescope.
+        </p>
+        <p id="renatus">
+          <a href="/wellness-rd/">Renatus Wellness &amp; sourcing</a> · My work
+          with equipment and manufacturers.
+        </p>
+        <p id="spirit">
+          <a href="/spiritual-mentor/">Master Within</a> · The foundation and
+          the tradition that inspired Vishwa Vigyan.
+        </p>
+      </div>
+    </section>
+    <ProfileLinks related={["apps", "wellness-rd", "inventor"]} />
+  </article>
+</Layout>

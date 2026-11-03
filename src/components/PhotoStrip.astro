@@ -1,0 +1,16 @@
+---
+import Photo from "./Photo.astro";
+interface Props {
+  items: string[][];
+}
+const { items } = Astro.props;
+---
+
+<div class="photo-strip">
+  {items.map(([name, caption]) => (
+    <figure>
+      <Photo name={name} />
+      <figcaption>{caption}</figcaption>
+    </figure>
+  ))}
+</div>

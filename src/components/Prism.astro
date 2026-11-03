@@ -1,0 +1,67 @@
+<figure class="plate">
+  <div class="mono platehead">
+    <span>Fig. 01</span>
+    <span>Optical study</span>
+  </div>
+  <svg
+    viewBox="0 0 500 270"
+    role="img"
+    aria-label="One beam enters a triangular prism and splits into five colours."
+  >
+    <defs>
+      <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+        <path
+          d="M24 0H0V24"
+          fill="none"
+          stroke="#f6f4ef"
+          stroke-opacity=".10"
+        />
+      </pattern>
+    </defs>
+    <rect width="500" height="270" fill="url(#grid)" />
+    <path
+      d="M167 207 225 60 300 198Z"
+      fill="#263952"
+      stroke="#f6f4ef"
+      stroke-width="2"
+    />
+    <path d="m225 60 16 -11 76 138 -17 11z" fill="#42566c" stroke="#f6f4ef" />
+    <path d="m167 207 16 -10 134 -10 -17 11z" fill="#243853" stroke="#f6f4ef" />
+    <path d="M0 161 193 142" stroke="#fff" stroke-width="5" />
+    <path d="m193 142 75 -19 13 40z" fill="#f6f4ef" opacity=".55" />
+    {["--coral", "--sky", "--sun", "--violet", "--leaf"].map((color, i) => (
+      <path
+        d={`M${268 + i * 3} ${123 + i * 9} L500 ${27 + i * 51} L500 ${35 + i * 51} Z`}
+        fill={`var(${color})`}
+      />
+    ))}
+  </svg>
+  <figcaption class="mono">
+    <span>White light</span>
+    <span>Five lanes</span>
+  </figcaption>
+</figure>
+<style>
+  .plate {
+    margin: 0;
+    background: var(--ink);
+    color: var(--paper);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px 0;
+  }
+  .platehead,
+  figcaption {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  .plate svg {
+    width: 100%;
+    display: block;
+  }
+  .plate .mono {
+    font-size: 10px;
+  }
+</style>

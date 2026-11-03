@@ -1,0 +1,223 @@
+---
+import ProfileLinks from "../components/ProfileLinks.astro";
+import Layout from "../layouts/Layout.astro";
+import PhotoStrip from "../components/PhotoStrip.astro";
+import papers from "../data/papers.json";
+import "../interior.css";
+
+const journal = papers.filter((paper) => paper.type.startsWith("Journal"));
+const preprints = papers
+  .filter((paper) => paper.type.startsWith("Preprint"))
+  .sort((first, second) => second.details.localeCompare(first.details));
+const publishedAndPosted = [...journal, ...preprints];
+const related = papers.filter(
+  (paper) =>
+    paper.type.startsWith("Working") || paper.type.startsWith("Public"),
+);
+---
+
+<Layout
+  title="Quantum physicist"
+  description="Souvik Ghosh’s quantum computing experiments, independent theory, Vishwa Vigyan Labs projects, papers and academic CV."
+>
+  <article class="folio science" id="science">
+    <header>
+      <span class="stamp">Souvik Ghosh / Research</span>
+      <h1>Quantum physicist</h1>
+      <p class="intro">
+        I work on experiments in quantum computing. I also do independent
+        research into how electrons move through small devices.
+      </p>
+      <div class="research-links">
+        <a class="cv" href="/Souvik-Ghosh-CV.pdf" download>
+          Download my CV <small>PDF ↓</small>
+        </a>
+        <a href="#papers">Read my papers</a>
+      </div>
+    </header>
+
+    <section class="folio-row">
+      <h2>At the lab</h2>
+      <div>
+        <p>
+          My experimental work is at the Quantum Circuit Lab in the Department
+          of Physics at National Sun Yat-sen University, Taiwan. My advisor is
+          Assoc. Prof. Kuei-Lin Chiu.
+        </p>
+        <p>
+          I cool small circuits to temperatures close to absolute zero and use
+          microwaves to measure their response. Those measurements tell us how a
+          qubit behaves inside a device.
+        </p>
+        <PhotoStrip
+          items={[
+            ["fridge-work", "Working on the dilution refrigerator"],
+            ["under-plate", "Beneath the lowest plate"],
+            ["circuit-detail", "A circuit assembly in hand"],
+          ]}
+        />
+      </div>
+    </section>
+
+    <section class="folio-row">
+      <h2>Independent theory</h2>
+      <div>
+        <p>
+          In a chain of coupled sites, what makes a quantum state spread out,
+          gather at an edge or stay in one place? I study that question in
+          non-Hermitian SSH chains with quasiperiodic modulation. A separate
+          preprint uses related mathematics to study why a neural network can
+          become unstable during training.
+        </p>
+        <p>
+          My other theoretical work follows electrons through small conductors,
+          with a focus on Landauer conductance and local partial density of
+          states. My independent research lives under Vishwa Vigyan Labs.
+        </p>
+      </div>
+    </section>
+
+    <section class="folio-row">
+      <h2>Vishwa Vigyan Labs</h2>
+      <div>
+        <p>
+          My independent work has its own home at Vishwa Vigyan. The project
+          pages include models you can try and distinguish published work from
+          open questions.
+        </p>
+        <ul class="project-list">
+          <li>
+            <a href="https://vishwavigyan.com/non-hermitian.html">
+              Non-Hermitian systems
+            </a>{" "}
+            — why a wave can gather at the edge of a chain.
+          </li>
+          <li>
+            <a href="https://vishwavigyan.com/quantum-time-lab.html">
+              Quantum Time Lab
+            </a>{" "}
+            — an ongoing study of transport and the interpretation of time.
+          </li>
+          <li>
+            <a href="https://vishwavigyan.com/bigbang-atlas.html">
+              Big Bang Atlas
+            </a>{" "}
+            — an early exploration of cosmology with Prof. Prosenjit Singha Deo.
+          </li>
+          <li>
+            <a href="https://vishwavigyan.com/quantum-ai.html">Quantum AI</a> —
+            experiments and an interactive illustration of a driven qubit.
+          </li>
+        </ul>
+        <a href="/inventor/">
+          For telescope and engineering work, visit my inventor profile →
+        </a>
+      </div>
+    </section>
+    <section class="folio-row" id="papers">
+      <h2>Papers</h2>
+      <div>
+        <ol class="bibliography">
+          {publishedAndPosted.map((paper) => (
+            <li>
+              <span class="folio-meta">{paper.type}</span>
+              <h3>
+                <a href={paper.url!}>{paper.title}</a>
+              </h3>
+              <p>{paper.authors}</p>
+              <p class="record">{paper.details}</p>
+            </li>
+          ))}
+        </ol>
+        <details>
+          <summary>Related writing and work in progress</summary>
+          <ul class="bibliography">
+            {related.map((item) => (
+              <li>
+                <span class="folio-meta">{item.type}</span>
+                <h3>
+                  {item.url ? <a href={item.url}>{item.title}</a> : item.title}
+                </h3>
+                <p>{item.authors}</p>
+                <p class="record">{item.details}</p>
+              </li>
+            ))}
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <section class="folio-row">
+      <h2>Research background</h2>
+      <div>
+        <p>
+          I completed my M.Sc. in Physics at Adamas University in 2024,
+          specializing in condensed matter. My dissertation studied how a
+          quasiperiodic layer changes reflection at a junction between a metal
+          and a superconductor.
+        </p>
+        <p>
+          My earlier research at the S. N. Bose National Centre for Basic
+          Sciences in Kolkata focused on mesoscopic transport.
+        </p>
+        <p>
+          For research enquiries, write to{" "}
+          <a href="mailto:founder@vishwavigyan.com">founder@vishwavigyan.com</a>
+          .
+        </p>
+      </div>
+    </section>
+    <ProfileLinks related={["inventor", "wellness-rd"]} />
+  </article>
+</Layout>
+<style>
+  .research-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.4rem;
+    margin-top: 1.5rem;
+  }
+  .science a.cv {
+    display: inline-flex;
+    gap: 0.85rem;
+    align-items: center;
+    padding: 0.65rem 1rem;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+  }
+  .cv small {
+    font: 500 0.7rem var(--mono);
+    color: var(--sky);
+  }
+  .cv:hover {
+    text-decoration: underline;
+  }
+  .bibliography {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .bibliography li {
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--ink) 25%, transparent);
+  }
+  .bibliography h3 {
+    font-size: clamp(1.18rem, 2.5vw, 1.55rem);
+  }
+  .bibliography p {
+    margin: 0.15em 0;
+  }
+  .bibliography .record {
+    font-size: 0.88em;
+  }
+  summary {
+    cursor: pointer;
+    padding: 0.5rem 0;
+  }
+  details[open] .bibliography {
+    margin-top: 1rem;
+  }
+</style>

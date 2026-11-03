@@ -1,0 +1,14 @@
+---
+import photos from "../photos.json";
+const { name, loading = "lazy" } = Astro.props;
+const photo = photos[name];
+---
+
+<img
+  src={"/images/" + name + ".webp"}
+  alt={photo.alt}
+  width={photo.width}
+  height={photo.height}
+  loading={loading}
+  decoding="async"
+/>

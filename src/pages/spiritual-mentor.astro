@@ -1,0 +1,54 @@
+---
+import Profile from "../layouts/Profile.astro";
+import Photo from "../components/Photo.astro";
+---
+
+<Profile
+  slug="spiritual-mentor"
+  related={["speaker", "author", "apps"]}
+  intro="I’m a Ritwik (ঋত্বিক). My spiritual work is rooted in my Living Ideal, Sree Sree Thakur Anukulchandra. Through Master Within, I share his teachings and help people find a place to begin their practice."
+>
+  <section class="folio-row">
+    <h2>Where to begin</h2>
+    <div>
+      <p>
+        If the name Thakur is new to you, start with this short introduction to
+        his life. It gives the context for the essays, gatherings and practices
+        we share.
+      </p>
+      <a href="https://masterwithin.net/start/thakur/">
+        Meet my Living Ideal ↗
+      </a>
+    </div>
+  </section>
+  <section class="folio-row">
+    <h2>Master Within Foundation</h2>
+    <div>
+      <figure class="field-photo">
+        <Photo name="in-conversation" />
+        <figcaption>In conversation at Master Within.</figcaption>
+      </figure>
+      <p>
+        I co-founded Master Within Foundation in 2016. Education, daily practice
+        and social service belong together in this work. Our Living Wisdom class
+        is one way to join a conversation in Bengali and Hindi.
+      </p>
+      <a href="https://masterwithin.net/class/">
+        Visit the Living Wisdom class ↗
+      </a>
+    </div>
+  </section>
+  <section class="folio-row">
+    <h2>Bijnan-Vibhuti</h2>
+    <div>
+      <p>
+        This is my project bringing Thakur’s philosophy into conversation with
+        modern science. His vision of the Satsang Vishwa Vigyan Kendra also
+        inspired our work through Vishwa Vigyan.
+      </p>
+      <a href="https://masterwithin.substack.com/p/rebuilding-vishwa-vigyan">
+        Read “Rebuilding Vishwa Vigyan” ↗
+      </a>
+    </div>
+  </section>
+</Profile>

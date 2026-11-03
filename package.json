@@ -1,0 +1,15 @@
+{
+  "name": "souvik-prism",
+  "version": "1.0.0",
+  "description": "Souvik Ghosh’s personal website",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "type": "module",
+  "dependencies": {
+    "astro": "^5.18.2"
+  },
+  "private": true
+}

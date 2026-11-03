@@ -1,0 +1,54 @@
+---
+import Profile from "../layouts/Profile.astro";
+import PhotoStrip from "../components/PhotoStrip.astro";
+---
+
+<Profile
+  slug="speaker"
+  related={["spiritual-mentor", "quantum-physicist", "author"]}
+  intro="I teach, speak and create videos. Sometimes that means explaining a physics experiment at a whiteboard. At Master Within, it often means taking a question about life back to a passage of Thakur’s and reading it together."
+>
+  <section class="folio-row">
+    <h2>Talks &amp; teaching</h2>
+    <div>
+      <PhotoStrip
+        items={[
+          ["talk-whiteboard", "Working through an idea at the board"],
+          ["talk-podium", "Speaking at the podium"],
+        ]}
+      />
+      <p>
+        I’m interested in conversations where people can bring a real question,
+        whether it’s about learning science, finding direction or building a
+        daily practice.
+      </p>
+    </div>
+  </section>
+  <section class="folio-row">
+    <h2>Watch or join</h2>
+    <div>
+      <p>
+        The Master Within video library collects talks and teachings. For a live
+        conversation, the Living Wisdom class page has the language and meeting
+        details.
+      </p>
+      <p>
+        <a href="https://masterwithin.net/wisdom/videos/">Browse videos ↗</a>
+      </p>
+      <a href="https://masterwithin.net/class/">Find the class ↗</a>
+    </div>
+  </section>
+  <section class="folio-row">
+    <h2>Speaking invitations</h2>
+    <div>
+      <p>
+        For a motivational talk, science session or conversation on spiritual
+        practice, tell me who will be in the room, what you’d like to discuss,
+        the language and the date you have in mind.
+      </p>
+      <a href="mailto:founder@vishwavigyan.com?subject=Speaking%20invitation">
+        Send a speaking enquiry →
+      </a>
+    </div>
+  </section>
+</Profile>

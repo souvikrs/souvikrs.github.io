@@ -1,0 +1,26 @@
+[
+  {
+    "shelf": "Master Within manuscripts",
+    "title": "ছড়ায় সত্যানুসরণ",
+    "language": "bn",
+    "form": "Bengali verse",
+    "status": "In revision",
+    "description": "In Chhoray Satyanusaran, I take up Thakur’s Satyanusaran a passage at a time and render it in Bengali verse. During revision I keep the original passage beside each poem."
+  },
+  {
+    "shelf": "Master Within manuscripts",
+    "title": "Satyanusaran Decoded",
+    "language": "en",
+    "form": "English nonfiction",
+    "status": "In progress",
+    "description": "A reader’s companion to the same text. In prose, I work through the sections in order and ask what each one might mean in everyday life."
+  },
+  {
+    "shelf": "Detective fiction",
+    "title": "The Sandipan Ray series",
+    "language": "en",
+    "form": "Bengali detective fiction",
+    "status": "In progress",
+    "description": "Sayak Roy and I are writing a detective series set in contemporary Kolkata. Sandipan notices what people overlook. His companion sees things with a filmmaker’s eye. We want the reader to have a fair chance of solving the mystery alongside them."
+  }
+]

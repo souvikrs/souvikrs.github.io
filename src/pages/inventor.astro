@@ -1,0 +1,58 @@
+---
+import Profile from "../layouts/Profile.astro";
+import Photo from "../components/Photo.astro";
+---
+
+<Profile
+  slug="inventor"
+  related={["quantum-physicist", "wellness-rd", "apps"]}
+  intro="I build instruments as well as working with them. The one I can show you best is a telescope I put together to photograph the night sky from a city rooftop."
+>
+  <section class="folio-row" id="purakaash">
+    <div>
+      <span class="folio-meta">Field instrument / 2025</span>
+      <h2>Purākaash Mk II</h2>
+    </div>
+    <div>
+      <figure class="field-photo">
+        <Photo name="rooftop-telescope" />
+        <figcaption>Setting up Purākaash on the rooftop.</figcaption>
+      </figure>
+      <p>
+        The telescope collects the light. The mount has to keep it pointed at
+        the same patch of sky while the camera records a long exposure. My part
+        was bringing a 203 mm telescope, tracking mount, cooled camera and
+        guiding system together as one instrument.
+      </p>
+      <p>
+        I commissioned it in October 2025 through Master Within. Vishwa Vigyan
+        documents the build.
+      </p>
+      <a href="https://vishwavigyan.com/purakaash.html">
+        See the telescope and build record ↗
+      </a>
+    </div>
+  </section>
+  <section class="folio-row">
+    <h2>Robotics, Vortex &amp; equipment</h2>
+    <div>
+      <p>
+        Robotics and Vortex are also part of my engineering work. I’m exploring
+        new equipment through Vishwa Vigyan and working with wellness companies
+        on how to turn an equipment idea into something they can manufacture.
+      </p>
+      <a href="/wellness-rd/">My role in wellness equipment development →</a>
+    </div>
+  </section>
+  <section class="folio-row">
+    <h2>Back at the lab</h2>
+    <div>
+      <p>
+        My research asks how quantum circuits behave when I cool and measure
+        them. My physics profile collects the experiments, theory and papers
+        behind that side of my work.
+      </p>
+      <a href="/quantum-physicist/">Explore my physics research →</a>
+    </div>
+  </section>
+</Profile>

@@ -1,0 +1,18 @@
+---
+import { profileFor, profileHref, type ProfileSlug } from "../data/profiles";
+interface Props {
+  related: ProfileSlug[];
+}
+const { related } = Astro.props;
+---
+
+<nav class="related-profiles" aria-label="Related profiles">
+  <strong>Elsewhere in my work</strong>
+  {related.map((slug) => (
+    <a href={profileHref(slug)}>
+      {profileFor(slug).label}{" "}
+      <span aria-hidden="true">{slug === "apps" ? "↗" : "→"}</span>
+    </a>
+  ))}
+  <a href="/#profiles">All profiles</a>
+</nav>

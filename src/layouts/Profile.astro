@@ -1,0 +1,26 @@
+---
+import Layout from "./Layout.astro";
+import ProfileLinks from "../components/ProfileLinks.astro";
+import { profileFor, type ProfileSlug } from "../data/profiles";
+import "../interior.css";
+interface Props {
+  slug: ProfileSlug;
+  intro: string;
+  related: ProfileSlug[];
+}
+const { slug, intro, related } = Astro.props;
+const role = profileFor(slug);
+---
+
+<Layout title={role.label} description={role.description}>
+  <article class="folio" style={`--accent:var(--${role.color})`}>
+    <header>
+      <span class="stamp">Souvik Ghosh / {role.category}</span>
+      <h1>{role.label}</h1>
+      <p class="intro">{intro}</p>
+      <slot name="lead" />
+    </header>
+    <slot />
+    <ProfileLinks related={related} />
+  </article>
+</Layout>

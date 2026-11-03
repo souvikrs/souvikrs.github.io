@@ -1,0 +1,250 @@
+.folio {
+  width: min(1140px, 100%);
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 96px) 0;
+  --accent: var(--sun);
+}
+.folio.science {
+  --accent: var(--sky);
+}
+.folio.writing {
+  --accent: var(--violet);
+}
+.folio.about {
+  --accent: var(--leaf);
+}
+.folio header {
+  padding-bottom: clamp(24px, 5vw, 60px);
+}
+.folio h1 {
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  margin: 0.24em 0;
+}
+.folio h2 {
+  font-size: clamp(1.7rem, 3vw, 2.65rem);
+  line-height: 1.1;
+  margin: 0;
+}
+.folio h3 {
+  font-size: clamp(1.4rem, 2.1vw, 2rem);
+  line-height: 1.18;
+  margin: 0.3em 0;
+}
+.folio p {
+  max-width: 65ch;
+  margin: 0 0 1em;
+}
+.folio .intro {
+  font-size: clamp(1.18rem, 2vw, 1.55rem);
+  margin: 0;
+}
+.folio a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+.stamp,
+.folio-meta,
+.folio figcaption {
+  font:
+    500 0.75rem/1.45 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.stamp {
+  display: inline-block;
+  background: var(--accent);
+  border-radius: 3px;
+  padding: 0.32em 0.65em;
+}
+.folio-row {
+  border-top: 1px solid var(--ink);
+  padding: clamp(25px, 4vw, 52px) 0;
+  display: grid;
+  gap: 1.2rem;
+}
+.folio-row > * {
+  min-width: 0;
+}
+.folio figure {
+  margin: 0;
+}
+.photo-strip {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+  margin: 1rem 0;
+}
+.folio figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 5px solid var(--ink);
+  box-sizing: border-box;
+}
+.folio figcaption {
+  margin: 8px 0;
+}
+.writing figure img {
+  border-color: var(--violet);
+}
+#spirit figure img {
+  border-color: var(--coral);
+}
+.folio .bio-art {
+  max-width: 190px;
+  float: right;
+  margin: 0 0 1rem 1.5rem;
+}
+.milestone {
+  font:
+    800 clamp(3.8rem, 8vw, 6rem)/1 "Source Sans 3",
+    sans-serif;
+  letter-spacing: -0.035em;
+}
+.papers-list {
+  margin: 0;
+  padding-left: 1.5em;
+}
+.papers-list li {
+  padding: 0 0 1rem 0.5em;
+  margin: 0 0 1rem;
+  border-bottom: 1px solid #b7bac1;
+}
+.papers-list p {
+  margin: 0.25em 0;
+}
+.venture + .venture {
+  margin-top: 2rem;
+}
+.life-tag {
+  background: var(--leaf);
+}
+.spirit-tag {
+  background: var(--coral);
+}
+.science-tag {
+  background: var(--sky);
+}
+.folio-row .stamp {
+  margin-bottom: 0.75rem;
+}
+.contact-address {
+  overflow-wrap: anywhere;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+}
+.signup-fields {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin: 0.3rem 0 1rem;
+}
+.signup-fields input,
+.signup-fields button {
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  border-radius: 0.25rem;
+  padding: 0.65rem 1rem;
+  font: inherit;
+}
+.signup-fields input {
+  min-width: 0;
+  max-width: 100%;
+}
+.signup-fields button {
+  background: var(--sun);
+  cursor: pointer;
+}
+@media (min-width: 720px) {
+  .folio-row {
+    grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr);
+    gap: 4vw;
+  }
+}
+@media (max-width: 580px) {
+  .folio .bio-art {
+    float: none;
+    margin: 0 0 1.5rem;
+  }
+}
+
+.folio .life-scene {
+  max-width: 480px;
+  margin: 1rem 0;
+}
+.life-scene img {
+  border-color: var(--leaf);
+}
+
+.folio h1,
+.folio h2,
+.milestone {
+  font-family: var(--display);
+  font-weight: 400;
+}
+.folio h1 {
+  letter-spacing: -0.045em;
+}
+.folio .stamp {
+  background: transparent;
+  border-left: 3px solid var(--accent);
+  padding: 0 0 0 0.75em;
+}
+.folio .spirit-tag {
+  --accent: var(--coral);
+}
+.folio .life-tag {
+  --accent: var(--leaf);
+}
+.folio .science-tag {
+  --accent: var(--sky);
+}
+.folio figure img {
+  border-width: 0;
+}
+.folio-row {
+  border-color: color-mix(in srgb, var(--ink) 32%, transparent);
+}
+.signup-fields button {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.folio {
+  width: min(1050px, 100%);
+  padding-top: clamp(42px, 6vw, 80px);
+}
+.folio h1,
+.folio h2 {
+  font-weight: 550;
+}
+.folio h1 {
+  font-size: clamp(3rem, 6.5vw, 6.2rem);
+  letter-spacing: -0.055em;
+}
+.folio header > .stamp,
+.folio-row .stamp {
+  border: 0;
+  border-radius: 30px;
+  background: color-mix(in srgb, var(--accent) 24%, var(--paper));
+  padding: 6px 12px;
+}
+.folio .intro {
+  max-width: 47ch;
+}
+.folio figure img {
+  border-radius: 14px;
+}
+.folio-row {
+  border-color: var(--line);
+}
+.shelf-nav {
+  display: flex;
+  gap: 8px 18px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+  font-size: 16px;
+}

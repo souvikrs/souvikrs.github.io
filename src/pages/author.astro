@@ -1,0 +1,117 @@
+---
+import ProfileLinks from "../components/ProfileLinks.astro";
+import manuscripts from "../data/books.json";
+import books from "../data/published-books.json";
+import Layout from "../layouts/Layout.astro";
+import "../interior.css";
+import "../author.css";
+
+const shelves = [
+  ["original", "Books I wrote"],
+  ["translation", "Books I translated"],
+];
+---
+
+<Layout
+  title="Author, poet & lyricist"
+  description="Read Souvik Ghosh’s Bengali poems and articles, explore his books and translations, and see what’s on his writing desk."
+>
+  <article class="folio writing" id="writing">
+    <header class="reader-intro">
+      <span class="stamp">Souvik Ghosh / Writing</span>
+      <h1>Author, poet &amp; lyricist</h1>
+      <p class="intro">
+        I write poems in Bengali, dohe in Hindi, and stories and essays. Some
+        pieces begin and end with a few lines. Others become books.
+      </p>
+      <nav class="reader-paths" aria-label="Choose what to read">
+        <a id="poetry" href="https://www.facebook.com/souvikghoshrs">
+          <span class="folio-meta">01 / Poetry</span>
+          <strong lang="bn">বাংলা কবিতা</strong>
+          <span>Read my poems on Facebook ↗</span>
+        </a>
+        <a id="essays" href="https://souvikghoshrs.substack.com/">
+          <span class="folio-meta">02 / Articles</span>
+          <strong>Essays &amp; articles</strong>
+          <span>Read my Substack ↗</span>
+        </a>
+        <a href="#books">
+          <span class="folio-meta">03 / Books</span>
+          <strong>The bookshelf</strong>
+          <span>Browse my books ↓</span>
+        </a>
+      </nav>
+    </header>
+
+    <section id="books" class="bookcase" aria-labelledby="books-heading">
+      <div class="bookcase-title">
+        <span class="folio-meta">Published work</span>
+        <h2 id="books-heading">The bookshelf</h2>
+      </div>
+      {shelves.map(([key, title]) => (
+        <section class="book-shelf" aria-labelledby={key}>
+          <h3 id={key}>{title}</h3>
+          <div class="book-grid">
+            {books
+              .filter((b) => b.shelf === key)
+              .map((b) => (
+                <a class="book" href={`https://www.amazon.in/dp/${b.asin}`}>
+                  <div class="cover-frame">
+                    <img
+                      src={`/images/books/${b.asin}.webp`}
+                      alt={`Cover of ${b.title}`}
+                      width={b.width}
+                      height="720"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <h4>{b.title}</h4>
+                  {b.subtitle && <p class="book-subtitle">{b.subtitle}</p>}
+                  <p class="book-credit">{b.credit}</p>
+                  <span class="book-link">
+                    View on Amazon India <span aria-hidden="true">↗</span>
+                  </span>
+                </a>
+              ))}
+          </div>
+        </section>
+      ))}
+    </section>
+
+    <section class="folio-row" id="manuscripts">
+      <div>
+        <span class="stamp">Work in progress</span>
+        <h2>On my writing desk</h2>
+      </div>
+      <div>
+        {manuscripts.map((b) => (
+          <article
+            class="venture"
+            id={b.shelf === "Detective fiction" ? "fiction" : undefined}
+          >
+            <span class="folio-meta">
+              {b.form} · {b.status}
+            </span>
+            <h3 lang={b.language}>{b.title}</h3>
+            <p>{b.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+    <section class="folio-row" id="talks">
+      <h2>Beyond the bookshelf</h2>
+      <div>
+        <p>
+          For Master Within, I wrote{" "}
+          <a href="https://masterwithin.substack.com/p/what-does-not-move">
+            What Does Not Move
+          </a>
+          , an essay on Dharma and how we choose what to do.
+        </p>
+        <a href="/speaker/">Talks, classes and videos →</a>
+      </div>
+    </section>
+    <ProfileLinks related={["speaker", "spiritual-mentor"]} />
+  </article>
+</Layout>

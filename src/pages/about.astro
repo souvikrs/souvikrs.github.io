@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PhotoStrip from "../components/PhotoStrip.astro";
+import Photo from "../components/Photo.astro";
+import "../interior.css";
+---
+
+<Layout title="About">
+  <article class="folio about">
+    <header>
+      <span class="stamp">About me</span>
+      <h1>From Naihati to Kaohsiung</h1>
+      <p class="intro">
+        I’m from Naihati, West Bengal, and I live in Kaohsiung, Taiwan. In
+        Bengali, my name is <span lang="bn">সৌভিক ঘোষ</span>. Today my work
+        spans Taiwan, China, Japan, the United States and India.
+      </p>
+    </header>
+
+    <section class="folio-row">
+      <h2>In the lab</h2>
+      <div>
+        <figure class="bio-art">
+          <Photo name="illustration-lab" />
+          <figcaption>Illustration · In the lab</figcaption>
+        </figure>
+        <p>
+          I work on quantum computing experiments in Taiwan. In the lab, I cool
+          small circuits and measure how they behave.
+        </p>
+        <p>
+          I also work on theoretical physics, studying how electrons move
+          through small structures and what happens to waves in chains with
+          unusual patterns of coupling.
+        </p>
+        <a href="/quantum-physicist/#papers">
+          Explore my research and papers →
+        </a>
+      </div>
+    </section>
+
+    <section class="folio-row">
+      <h2>At the writing desk</h2>
+      <div>
+        <p>
+          I write Bengali essays and articles, Hindi dohe, and verse. With Sayak
+          Roy, I’m also writing a Bengali detective series set in contemporary
+          Kolkata.
+        </p>
+        <p>
+          As a content creator, I use talks, videos and essays to share work
+          that would otherwise stay in a notebook or a conversation.
+        </p>
+        <a href="/author/">Visit my writing desk →</a>
+      </div>
+    </section>
+
+    <section class="folio-row" id="life">
+      <h2>Where service begins</h2>
+      <div>
+        <p>
+          My Living Ideal is Sree Sree Thakur Anukulchandra. I’m a{" "}
+          <span lang="bn">ঋত্বিক</span>, and in 2016 I co-founded Master Within
+          Foundation for spiritual, educational and social-welfare work. Through{" "}
+          <i>Bijnan-Vibhuti</i>, I bring Thakur’s philosophy into conversation
+          with modern science.
+        </p>
+        <p>
+          That history matters to me as a founder, too. Vishwa Vigyan is a
+          Master Within initiative inspired by Thakur’s vision of the Satsang
+          Vishwa Vigyan Kendra. My first milestone is to change the lives of
+          10,000 people. It began with helping friends and students one at a
+          time.
+        </p>
+        <a href="/spiritual-mentor/">Read my spiritual mentorship profile →</a>
+      </div>
+    </section>
+    <section class="folio-row" id="gallery">
+      <div>
+        <span class="stamp">Photo album</span>
+        <h2>Away from the desk</h2>
+      </div>
+      <PhotoStrip
+        items={[
+          ["telescope-mount", "Adjusting the telescope mount"],
+          ["talk-whiteboard", "At the whiteboard"],
+          ["portrait-kurta", "Listening, between conversations"],
+        ]}
+      />
+    </section>
+  </article>
+</Layout>

@@ -1,0 +1,35 @@
+---
+import { automateUrl } from "../data/profiles";
+export function getStaticPaths() {
+  return Object.entries({
+    apps: automateUrl,
+    science: "/quantum-physicist/",
+    writing: "/author/",
+    work: "/business/",
+  }).map(([legacy, target]) => ({
+    params: { legacy },
+    props: { target },
+  }));
+}
+const { target } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Updated profile · Souvik Ghosh</title>
+    <meta name="robots" content="noindex" />
+    <script is:inline define:vars={{ target }}>
+      location.replace(target.startsWith("/") ? target + location.search + location.hash : target);
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content={`0;url=${target}`} />
+    </noscript>
+  </head>
+  <body>
+    <p>
+      <a href={target}>Continue to the updated profile</a>
+    </p>
+  </body>
+</html>

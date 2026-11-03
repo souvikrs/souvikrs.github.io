@@ -1,0 +1,37 @@
+---
+const { name } = Astro.props;
+---
+
+<svg
+  class="lane-icon"
+  viewBox="0 0 40 40"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.7"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+>
+  {name === "research" && (
+    <g>
+      <ellipse cx="20" cy="20" rx="17" ry="6.5" transform="rotate(-32 20 20)" />
+      <ellipse cx="20" cy="20" rx="17" ry="6.5" transform="rotate(52 20 20)" />
+      <circle cx="20" cy="20" r="2" fill="currentColor" />
+    </g>
+  )}
+  {name === "writing" && (
+    <g>
+      <path d="M3 8q10-3 17 3 7-6 17-3v23q-9-2-17 3-9-5-17-3zM20 12v21M7 14q4-1 9 2M7 19q5-1 9 2M25 16q3-2 8-2M25 21q4-2 8-2" />
+    </g>
+  )}
+  {name === "spirit" && (
+    <g>
+      <path d="M20 27C11 23 8 16 10 9c6 1 9 6 10 9 1-6 5-10 10-12 4 10-2 18-10 21ZM20 27C11 28 5 23 3 18l7 1M21 27c9 1 14-4 16-10l-6 2M8 33q12 4 24-2" />
+    </g>
+  )}
+  {name === "ventures" && (
+    <g>
+      <path d="m4 19 12-7 12 7-12 7zM4 19v11l12 6 12-7V19M16 26v10M16 12V5l10-4 10 6v10l-8 4M16 5l10 6 10-4M26 11v7" />
+    </g>
+  )}
+</svg>
